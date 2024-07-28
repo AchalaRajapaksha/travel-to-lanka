@@ -1,0 +1,49 @@
+.welcome{
+  margin-left:2% ;  
+  margin-right:2% ; 
+  background-color: #bbc7c4;
+display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+ padding-right: 10px;
+ padding-top: 15px;
+ padding-bottom: 15px;
+ border:none;
+ border-radius: 8px;
+
+}
+
+.welcome h2{
+font-size: 30px;
+color:#1e1e1f ;
+}
+
+.welcome p{
+    color:#1e1e1f ;
+    
+}
+
+.welcome img{
+  width:50% ; 
+  height:50vh ; 
+  align-self: center;
+  padding-top:10px ;
+  border: none;
+  border-radius: 8px;
+  
+}
+
+.images-2{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.images-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
