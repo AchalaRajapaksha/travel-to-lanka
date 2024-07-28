@@ -48,7 +48,7 @@ export default function Home() {
           paradise. Join us and create memories that will last a lifetime. Your
           adventure in Sri Lanka awaits!
         </p>
-        <div className="images-wrapper">
+               <div className="images-wrapper">
           <div className="images-2">
             <img src="./images/sigiriya.jpeg" alt="Sigiriya" />
             <img src="./images/beach.jpg" alt="beach" />
