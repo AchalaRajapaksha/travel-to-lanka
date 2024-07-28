@@ -137,3 +137,41 @@ padding-left: 10px;
   font-size: 30px;
   font-weight: bold;
 }
+
+.logo{
+    width: 150px;
+    height: 150px;
+}
+
+.navigationbar-wrapper h1{
+color:#054235 ;
+font-size:60px ;
+font-weight: bold;
+
+}
+
+.navigationbar-buttons{
+   display: flex; 
+   flex-direction: row;
+   gap:10px;
+   margin-top: 10px;
+   margin-right: 10px;
+}
+
+.navigationbar-wrapper{
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+     justify-content: space-between;
+     padding: 8px;
+
+}
+
+.navigationbar-logo-and-name{
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+     justify-content: space-between;
+     padding: 8px;
+    align-items: center;
+}

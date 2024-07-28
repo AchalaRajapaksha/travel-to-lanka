@@ -1,12 +1,36 @@
-import React from 'react'
-import Navigationbar from '../Components/Navigationbar'
+import React from "react";
 import "./Home.css";
-
+import { Button } from "@chakra-ui/react";
 
 export default function Home() {
   return (
     <div>
-      <Navigationbar />
+      <div className="navigationbar-wrapper">
+        <div className="navigationbar-logo-and-name">
+          <div className="logo">
+            <img src="./Logo.svg" alt="Logo" />
+          </div>
+          <h1>Travel to Lanka</h1>
+        </div>
+        <div className="navigationbar-buttons">
+          <a href="#what-we-offer">
+            <Button colorScheme="teal" variant="outline" size="sm">
+              Destinations
+            </Button>
+          </a>
+          <a href="#experience">
+            <Button colorScheme="teal" variant="outline" size="sm">
+              About us
+            </Button>
+          </a>
+          <a href="#contact">
+            <Button colorScheme="teal" variant="outline" size="sm">
+              Contact us
+            </Button>
+          </a>
+        </div>
+      </div>
+
       <div className="welcome">
         <h2>
           Discover the Magic of Sri Lanka with <b> "Travel to Lanka"!</b>
@@ -35,6 +59,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <section id="experience"></section>
       <div className="experience-part-wrapper">
         <h2>Who We Are</h2>
         <p>
@@ -75,6 +100,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <section id="what-we-offer"></section>
       <div className="what-we-offer-wrapper">
         <h2>What we offer</h2>
         <p>
@@ -148,12 +174,15 @@ export default function Home() {
           </b>
         </p>
       </div>
+      <section id="contact"></section>
       <div className="footer">
         <h2>Contact Us</h2>
         <p>
           <b>Phone:</b> +94710988683
         </p>
-        <p><b>Email:</b> boxythewinner@gmail.com</p>
+        <p>
+          <b>Email:</b> boxythewinner@gmail.com
+        </p>
       </div>
     </div>
   );
