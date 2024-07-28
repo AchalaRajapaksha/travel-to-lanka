@@ -22,7 +22,7 @@ color:#1e1e1f ;
 
 .welcome p{
     color:#1e1e1f ;
-    
+    padding-top: 10px;
 }
 
 .welcome img{
@@ -45,5 +45,95 @@ color:#1e1e1f ;
 .images-wrapper{
     display: flex;
     flex-direction: column;
+    padding-top:10px ;
 }
 
+.experience-part-wrapper{
+ margin-left:2% ;  
+  margin-right:2% ; 
+display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+ padding-right: 10px;
+ padding-top: 15px;
+ padding-bottom: 25px;
+ border:none;
+ border-radius: 8px;
+
+
+}
+
+.experience-part-wrapper h2{
+font-size: 30px;
+color:#383b3a ;
+font-weight: bold;
+}
+
+.experience-part-wrapper p{
+    color:#6b706f ;
+    
+}
+
+.experience-part-wrapper img{
+ width:50% ; 
+  height:35vh; 
+  align-self: center;
+  padding-top:10px ;
+  border: none;
+  border-radius: 8px;
+
+}
+.images-4{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.images-wrapper{
+    display: flex;
+    flex-direction: column;
+    padding-top:10px ;
+}
+
+.what-we-offer-wrapper{
+margin-left:2% ;  
+background-color:#06c299 ;
+  margin-right:2% ; 
+display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+ padding-right: 10px;
+ padding-top: 15px;
+ padding-bottom: 25px;
+ border:none;
+ border-radius: 8px;
+
+}
+
+.what-we-offer-wrapper h2{
+font-size: 30px;
+color:#383b3a ;
+font-weight: bold;
+}
+
+.footer{
+  margin-left:2% ;  
+  margin-right:2% ; 
+padding-left: 10px;
+ padding-right: 10px;
+ padding-top: 15px;
+ padding-bottom: 25px;
+ align-items: end;
+ display: flex;
+ flex-direction: column;
+}
+
+.footer h2{
+  font-size: 30px;
+  font-weight: bold;
+}
