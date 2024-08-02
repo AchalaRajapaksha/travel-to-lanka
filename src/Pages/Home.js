@@ -1,6 +1,10 @@
 import React from "react";
 import "./Home.css";
 import { Button } from "@chakra-ui/react";
+import Carousel from 'react-bootstrap/Carousel';
+
+
+
 
 export default function Home() {
   return (
@@ -48,17 +52,33 @@ export default function Home() {
           paradise. Join us and create memories that will last a lifetime. Your
           adventure in Sri Lanka awaits!
         </p>
-               <div className="images-wrapper">
-          <div className="images-2">
-            <img src="./images/sigiriya.jpeg" alt="Sigiriya" />
-            <img src="./images/beach.jpg" alt="beach" />
-          </div>
-          <div className="images-2">
-            <img src="./images/dambulla.jpg" alt="dambulla" />
-            <img src="./images/elephant.jpg" alt="elephant" />
-          </div>
-        </div>
-      </div>
+<div className="carousel">
+        <Carousel fade>
+      <Carousel.Item>
+      <img src="./images/sigiriya.jpeg" alt="Sigiriya" />
+        <Carousel.Caption>
+          <h3>First slide label</h3>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+      <img src="./images/beach.jpg" alt="beach" />
+        <Carousel.Caption>
+          <h3>Second slide label</h3>
+         
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+      <img src="./images/dambulla.jpg" alt="dambulla" />
+        <Carousel.Caption>
+          <h3>Third slide label</h3>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
+
+    </div>
+    </div>
+
+               
       <section id="experience"></section>
       <div className="experience-part-wrapper">
         <h2>Who We Are</h2>
@@ -87,16 +107,16 @@ export default function Home() {
 
         <div className="images-wrapper">
           <div className="images-4">
-            <img src="./images/img1.jpg" alt="image" />
-            <img src="./images/img2.jpg" alt="image" />
-            <img src="./images/img3.jpg" alt="image" />
-            <img src="./images/img4.jpg" alt="image" />
+            <img src="./images/img1.jpg" alt="image" className="cover"/>
+            <img src="./images/img2.jpg" alt="image" className="cover"/>
+            <img src="./images/img3.jpg" alt="image" className="cover"/>
+            <img src="./images/img4.jpg" alt="image" className="cover"/>
           </div>
           <div className="images-4">
-            <img src="./images/img5.jpg" alt="image" />
-            <img src="./images/img6.jpg" alt="image" />
-            <img src="./images/img7.jpg" alt="image" />
-            <img src="./images/img8.jpg" alt="image" />
+            <img src="./images/img5.jpg" alt="image" className="cover"/>
+            <img src="./images/img6.jpg" alt="image" className="cover"/>
+            <img src="./images/img7.jpg" alt="image" className="cover"/>
+            <img src="./images/img8.jpg" alt="image" className="cover"/>
           </div>
         </div>
       </div>

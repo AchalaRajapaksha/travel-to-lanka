@@ -26,26 +26,20 @@ color:#1e1e1f ;
 }
 
 .welcome img{
-  width:50% ; 
-  height:50vh ; 
+  width: 100%; 
+  height: 80vh; /* Adjust to maintain aspect ratio */
+  max-height: 80vh; /* Ensure it doesn't exceed viewport height */
+  max-width: 500px;
   align-self: center;
-  padding-top:10px ;
+  padding-top: 10px;
   border: none;
   border-radius: 8px;
-  
+  object-fit: cover;
 }
 
-.images-2{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    justify-content: space-between;
-}
-
-.images-wrapper{
-    display: flex;
-    flex-direction: column;
-    padding-top:10px ;
+.carousel{
+  max-height: 80vh; /* Ensure it doesn't exceed viewport height */
+  max-width: 500px;
 }
 
 .experience-part-wrapper{
@@ -78,7 +72,8 @@ font-weight: bold;
 
 .experience-part-wrapper img{
  width:50% ; 
-  height:35vh; 
+  height:35vh;
+  object-fit: cover;
   align-self: center;
   padding-top:10px ;
   border: none;
@@ -91,6 +86,7 @@ font-weight: bold;
     gap: 10px;
     justify-content: space-between;
 }
+
 
 .images-wrapper{
     display: flex;
