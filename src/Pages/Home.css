@@ -217,12 +217,12 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    object-fit: cover;
   }
 
   .images-wrapper img {
     width: 100%;
-    height: 100vh;
+    height: 50vh;
+    object-fit: cover;
   }
 
   .cover:hover {
