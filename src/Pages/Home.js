@@ -1,14 +1,59 @@
 import React from "react";
 import "./Home.css";
 import { Button } from "@chakra-ui/react";
-import Carousel from 'react-bootstrap/Carousel';
-
-
-
+import Carousel from "react-bootstrap/Carousel";
+import Card from "react-bootstrap/Card";
+import Alert from "react-bootstrap/Alert";
+import { IconButton } from "@chakra-ui/react";
+import { BsArrowUpCircle } from "react-icons/bs";
+import { useState, useEffect, useRef } from "react";
 
 export default function Home() {
+  const [isVisible, setIsVisible] = useState(false);
+  const scrollButtonRef = useRef(null);
+
+  useEffect(() => {
+    // Show button when page is scrolled down by 20px
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 20) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Optional: for smooth scrolling
+    });
+  };
+
   return (
     <div>
+      <IconButton
+        ref={scrollButtonRef}
+        onClick={scrollToTop}
+        colorScheme="green"
+        aria-label="Scroll to top"
+        fontSize="30px"
+        icon={<BsArrowUpCircle />}
+        style={{
+          display: isVisible ? "block" : "none",
+          position: "fixed",
+          bottom: "40px",
+          right: "40px",
+          zIndex: "1000",
+          padding: "5px", // Add padding if needed
+        }}
+      />
+
       <div className="navigationbar-wrapper">
         <div className="navigationbar-logo-and-name">
           <div className="logo">
@@ -52,36 +97,39 @@ export default function Home() {
           paradise. Join us and create memories that will last a lifetime. Your
           adventure in Sri Lanka awaits!
         </p>
-<div className="carousel">
-        <Carousel fade>
-      <Carousel.Item>
-      <img src="./images/sigiriya.jpeg" alt="Sigiriya" />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-      <img src="./images/beach.jpg" alt="beach" />
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-         
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-      <img src="./images/dambulla.jpg" alt="dambulla" />
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
+        <div className="carousel">
+          <Carousel fade>
+            <Carousel.Item>
+              <img src="./images/sigiriya.jpeg" alt="Sigiriya" />
+              <Carousel.Caption>
+                <h3>Beautiful Destinations</h3>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img src="./images/beach.jpg" alt="beach" />
+              <Carousel.Caption>
+                <h3>Wonderful Beaches</h3>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img src="./images/dambulla.jpg" alt="dambulla" />
+              <Carousel.Caption>
+                <h3>Heritage sites</h3>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img src="./images/elephant.jpg" alt="elephant" />
+              <Carousel.Caption>
+                <h3>Wild Life</h3>
+              </Carousel.Caption>
+            </Carousel.Item>
+          </Carousel>
+        </div>
+      </div>
 
-    </div>
-    </div>
-
-               
       <section id="experience"></section>
       <div className="experience-part-wrapper">
-        <h2>Who We Are</h2>
+        <h2>Who we are</h2>
         <p>
           At Travel to Lanka, we pride ourselves on providing unforgettable
           travel experiences for <b>over 14 years.</b> Our deep-rooted passion
@@ -107,102 +155,181 @@ export default function Home() {
 
         <div className="images-wrapper">
           <div className="images-4">
-            <img src="./images/img1.jpg" alt="image" className="cover"/>
-            <img src="./images/img2.jpg" alt="image" className="cover"/>
-            <img src="./images/img3.jpg" alt="image" className="cover"/>
-            <img src="./images/img4.jpg" alt="image" className="cover"/>
+            <img src="./images/img1.jpg" alt="image" className="cover" />
+            <img src="./images/img2.jpg" alt="image" className="cover" />
+            <img src="./images/img3.jpg" alt="image" className="cover" />
+            <img src="./images/img4.jpg" alt="image" className="cover" />
           </div>
           <div className="images-4">
-            <img src="./images/img5.jpg" alt="image" className="cover"/>
-            <img src="./images/img6.jpg" alt="image" className="cover"/>
-            <img src="./images/img7.jpg" alt="image" className="cover"/>
-            <img src="./images/img8.jpg" alt="image" className="cover"/>
+            <img src="./images/img5.jpg" alt="image" className="cover" />
+            <img src="./images/img6.jpg" alt="image" className="cover" />
+            <img src="./images/img7.jpg" alt="image" className="cover" />
+            <img src="./images/img8.jpg" alt="image" className="cover" />
+          </div>
+          <div className="images-4">
+            <img src="./images/img9.jpeg" alt="image" className="cover" />
+            <img src="./images/img10.jpeg" alt="image" className="cover" />
+            <img src="./images/img11.jpeg" alt="image" className="cover" />
+            <img src="./images/img12.jpeg" alt="image" className="cover" />
           </div>
         </div>
       </div>
       <section id="what-we-offer"></section>
       <div className="what-we-offer-wrapper">
-        <h2>What we offer</h2>
+        <h2>Most wonderful destinations</h2>
         <p>
           At Travel to Lanka, we provide a diverse range of destinations and
           activities to ensure that every moment of your journey is filled with
           wonder and adventure. Here are some of the incredible places you can
           explore with us:
         </p>
-        <ul>
-          <li>
-            <strong>Minneriya National Park</strong>: Witness the majestic
-            elephants in their natural habitat.
-          </li>
-          <li>
-            <strong>Mirissa</strong>: Relax on the serene beaches and enjoy
-            whale watching.
-          </li>
-          <li>
-            <strong>Sigiriya</strong>: Explore the mystical ruins of the ancient
-            rock fortress.
-          </li>
-          <li>
-            <strong>Kandy</strong>: Visit the sacred Temple of the Tooth and
-            experience the vibrant cultural shows.
-          </li>
-          <li>
-            <strong>Ella</strong>: Hike through lush tea plantations and enjoy
-            breathtaking views.
-          </li>
-          <li>
-            <strong>Galle</strong>: Wander through the historic Galle Fort and
-            its charming streets.
-          </li>
-          <li>
-            <strong>Yala National Park</strong>: Go on a thrilling safari to
-            spot leopards, elephants, and other wildlife.
-          </li>
-          <li>
-            <strong>Nuwara Eliya</strong>: Discover the beauty of "Little
-            England" with its colonial architecture and tea estates.
-          </li>
-          <li>
-            <strong>Polonnaruwa</strong>: Explore the ancient ruins of this
-            former royal capital.
-          </li>
-          <li>
-            <strong>Colombo</strong>: Experience the bustling city life with its
-            mix of modernity and history.
-          </li>
-          <li>
-            <strong>Anuradhapura</strong>: Visit the ancient city with its
-            magnificent stupas and historical sites.
-          </li>
-          <li>
-            <strong>Trincomalee</strong>: Enjoy the pristine beaches and explore
-            the underwater wonders while snorkeling or diving.
-          </li>
-          <li>
-            <strong>Bentota</strong>: Relax on the golden sandy beaches and
-            enjoy various water sports.
-          </li>
-        </ul>
+        <div className="card-wrapper">
+          <div className="card">
+            <Card border="primary">
+              <Card.Header>
+                <b>Wild Wonders</b>
+              </Card.Header>
+              <Card.Body>
+                <img src="./images/Wildlife.jpg" alt="Wildlife" />
+                <Card.Text>
+                  <br />
+                  <ul>
+                    <li>Minneriya National Park</li>
+                    <li>Yala National Park</li>
+                    <li>Kaudulla National Park</li>
+                    <li>Echo Park</li>
+                    <li>Udawalawa National Park</li>
+                    <li>Wilpattu National Park</li>
+                  </ul>
+                  <br /> <br />
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
+
+          <div className="card">
+            <Card border="secondary">
+              <Card.Header>
+                <b>Sun-Kissed Paradises</b>
+              </Card.Header>
+              <Card.Body>
+                <img src="./images/beach2.jpg" alt="Beach" />
+
+                <Card.Text>
+                  <br />
+                  <ul>
+                    <li>Mirissa beach</li>
+                    <li>Negombo beach</li>
+                    <li>Trincomalee</li>
+                    <li>Nilaweli beach</li>
+                    <li>Hikkaduwa beach</li>
+                    <li>Pasikuda beach</li>
+                    <li>Dalawella beach</li>
+                    <li>Unawatuna beach</li>
+                  </ul>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
+
+          <div className="card">
+            <Card border="success">
+              <Card.Header>
+                <b>Heritage Sites</b>
+              </Card.Header>
+              <Card.Body>
+                <img src="./images/heritage.jpg" alt="Heritage" />
+                <Card.Text>
+                  <br />
+                  <ul>
+                    <li>Galle</li>
+                    <li>Sigiriya</li>
+                    <li>Dambulla</li>
+                    <li>Kandy </li>
+                    <li>Polonnaruwa</li>
+                    <li>Anuradhapura</li>
+                    <li>Colombo</li>
+                  </ul>
+                  <br />
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
+
+          <div className="card">
+            <Card border="danger">
+              <Card.Header>
+                <b>Top Hiking Trails</b>
+              </Card.Header>
+              <Card.Body>
+                <img src="./images/hiking.jpg" alt="Hiking" />
+                <Card.Text>
+                  <br />
+                  <ul>
+                    <li>Ella</li>
+                    <li>Haputhale</li>
+                    <li>Knuckles</li>
+                    <li>Meemure</li>
+                    <li>Adam's Peak</li>
+                    <li>World's End</li>
+                  </ul>
+                  <br />
+                  <br />
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
+
+          <div className="card">
+            <Card border="warning">
+              <Card.Header>
+                <b>Serene Escapes</b>
+              </Card.Header>
+              <Card.Body>
+                <img src="./images/teaplants.jpeg" alt="Teaplants" />
+                <Card.Text>
+                  <br />
+                  <ul>
+                    <li>Nuwara Eliya</li>
+                  </ul>
+                  <br /> <br />
+                  <br /> <br />
+                  <br /> <br />
+                  <br />
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
+        </div>
         <br /> <br />
-        <p>
-          <b>
-            To make your journey even more comfortable, we provide complimentary
-            WiFi and water bottles throughout the entire tour. Stay connected
-            and hydrated as you explore the wonders of Sri Lanka with us,
-            ensuring you have everything you need for a seamless and enjoyable
-            travel experience.
-          </b>
-        </p>
+        <Alert variant="success">
+          <Alert.Heading>Stay Hydrated & Connected</Alert.Heading>
+          <hr />
+          <p>
+            <b>
+              To make your journey even more comfortable, we provide
+              complimentary WiFi and water bottles throughout the entire tour.
+              Stay connected and hydrated as you explore the wonders of Sri
+              Lanka with us, ensuring you have everything you need for a
+              seamless and enjoyable travel experience.
+            </b>
+          </p>
+        </Alert>
       </div>
       <section id="contact"></section>
       <div className="footer">
-        <h2>Contact Us</h2>
-        <p>
-          <b>Phone:</b> +94710988683
-        </p>
-        <p>
-          <b>Email:</b> boxythewinner@gmail.com
-        </p>
+        <div className="logo">
+          <img src="./Logo.svg" alt="Logo" />
+        </div>
+        <div className="details-footer">
+          <h2>Contact Us</h2>
+          <p>
+            <b>Phone:</b> +94710988683
+          </p>
+          <p>
+            <b>Email:</b> boxythewinner@gmail.com
+          </p>
+        </div>
       </div>
     </div>
   );
