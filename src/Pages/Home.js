@@ -47,7 +47,7 @@ export default function Home() {
         style={{
           display: isVisible ? "block" : "none",
           position: "fixed",
-          bottom: "40px",
+          bottom: "70px",
           right: "40px",
           zIndex: "1000",
           padding: "5px", // Add padding if needed
@@ -327,7 +327,7 @@ export default function Home() {
             <b>Phone:</b> +94710988683
           </p>
           <p>
-            <b>Email:</b> boxythewinner@gmail.com
+            <b>Email:</b> traveltolankawithsuda@gmail.com
           </p>
         </div>
       </div>
