@@ -324,11 +324,36 @@ export default function Home() {
         <div className="details-footer">
           <h2>Contact Us</h2>
           <p>
-            <b>Phone:</b> +94710988683
+            <b>Phone:</b> +94 78 922 2201
           </p>
           <p>
-            <b>Email:</b> traveltolankawithsuda@gmail.com
+            <b>Email:</b> contact@traveltolanka.com
           </p>
+          <p>
+            <b>Follow us on:</b>
+          </p>
+          <a
+            href="https://www.facebook.com/profile.php?id=61564028454226&mibextid=ZbWKwL"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Facebook
+          </a>
+          <a
+            href="https://www.instagram.com/travel_to_lanka__?igsh=dnlqcWRmaTFsd2hq"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
+          <a
+            href="https://www.tripadvisor.com/Attraction_Review-g3736162-d28100418-Reviews-Travel_to_Lanka-Seeduwa_Western_Province.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Twitter
+          </a>
+          <br />
         </div>
       </div>
     </div>
