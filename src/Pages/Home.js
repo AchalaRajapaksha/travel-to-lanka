@@ -7,8 +7,17 @@ import Alert from "react-bootstrap/Alert";
 import { IconButton } from "@chakra-ui/react";
 import { BsArrowUpCircle } from "react-icons/bs";
 import { useState, useEffect, useRef } from "react";
+import { packagesArrayE } from "../Components/PackagesArrayE";
+import { packagesArrayS } from "../Components/PackagesArrayS";
+import TourPackageEastCoastFocus from "../Components/TourPackageEastCoastFocus";
+import TourPackageSouthCoastFocus from "../Components/TourPackageSouthCoastFocus";
+import { placesArrayE } from "../Components/PlacesArrayE";
+import { placesArrayS } from "../Components/PlacesArrayS";
+import Itinarary from "../Components/Itinarary";
 
 export default function Home() {
+  const [packages, setPackages] = useState([]);
+
   const [isVisible, setIsVisible] = useState(false);
   const scrollButtonRef = useRef(null);
 
@@ -33,6 +42,10 @@ export default function Home() {
       top: 0,
       behavior: "smooth", // Optional: for smooth scrolling
     });
+  };
+
+  const handleclick = (clickeditem) => {
+    setPackages((prev) => [clickeditem]);
   };
 
   return (
@@ -301,7 +314,51 @@ export default function Home() {
             </Card>
           </div>
         </div>
-        <br /> <br />
+        <br />
+        <h1>Let's create your personalized itinarary</h1>
+        <br />
+        <div className="package-main">
+          <div className="packages-wrappere">
+            {packagesArrayE.map((item) => {
+              return (
+                <TourPackageEastCoastFocus
+                  className="pkge"
+                  key={item.id}
+                  item={item}
+                  placese={placesArrayE}
+                  packages={packages}
+                  setPackages={setPackages}
+                  handleclick={handleclick}
+                />
+              );
+            })}
+          </div>
+          <div className="packages-wrappers">
+            {packagesArrayS.map((item) => {
+              return (
+                <TourPackageSouthCoastFocus
+                  className="pkgs"
+                  key={item.id}
+                  item={item}
+                  placess={placesArrayS}
+                  packages={packages}
+                  setPackages={setPackages}
+                  handleclick={handleclick}
+                />
+              );
+            })}
+          </div>
+
+          <div className="itinarary-wrapper-main">
+            <h2>Your Itinarary</h2>
+            <Itinarary
+              packages={packages}
+              placess={placesArrayS}
+              placese={placesArrayE}
+            />
+            <br />
+          </div>
+        </div>
         <Alert variant="success">
           <Alert.Heading>Stay Hydrated & Connected</Alert.Heading>
           <hr />

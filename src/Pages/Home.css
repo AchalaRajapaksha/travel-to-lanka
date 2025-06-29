@@ -28,7 +28,7 @@
   width: 100%;
   height: 85vh; /* Adjust to maintain aspect ratio */
   max-height: 85vh; /* Ensure it doesn't exceed viewport height */
-  max-width: 500px;
+  max-width: 100%;
   align-self: center;
   padding: 5px;
   border: none;
@@ -38,7 +38,8 @@
 
 .carousel {
   max-height: 85vh; /* Ensure it doesn't exceed viewport height */
-  max-width: 500px;
+  max-width: 100%;
+  width: 100%;
 }
 
 .experience-part-wrapper {
@@ -111,6 +112,7 @@
   padding-bottom: 25px;
   border: none;
   border-radius: 8px;
+  height: auto;
 }
 
 .what-we-offer-wrapper h2 {
@@ -263,4 +265,85 @@
     width: 90px;
     height: 90px;
   }
+}
+
+.package-wrapper {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  border-radius: 10px;
+  border: #054235;
+  border-style: dashed;
+  background-color: #6ef7d9;
+}
+
+.package-wrapper:hover {
+  transform: scale(1.03);
+  max-width: 100%;
+  max-height: 100vh;
+  transition: transform 0.3s ease;
+}
+
+.package-wrapper h3 {
+  font-size: 20px;
+  color: #177a51;
+}
+
+.packages-wrappers {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+}
+.packages-wrappere {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+}
+
+.package-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.itinarary-wapper h3 {
+  color: rgb(40, 88, 56);
+  padding: 10px;
+}
+
+.itinarary-wrapper-main h2 {
+  color: rgb(51, 87, 62);
+  padding: 10px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.itinarary-wrapper-main {
+  background-color: white;
+  margin: 10px;
+  border-radius: 8px;
+  height: auto;
+  padding: 10px;
+}
+
+.activities {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.activity {
+  background-color: #b2f0d6;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
 }
